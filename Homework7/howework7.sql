@@ -1,10 +1,10 @@
-/* 1. Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине. */
+/* 1. РЎРѕСЃС‚Р°РІСЊС‚Рµ СЃРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ users, РєРѕС‚РѕСЂС‹Рµ РѕСЃСѓС‰РµСЃС‚РІРёР»Рё С…РѕС‚СЏ Р±С‹ РѕРґРёРЅ Р·Р°РєР°Р· orders РІ РёРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅРµ. */
 SELECT id, name FROM users
 WHERE id IN (
     SELECT user_id FROM orders
 );
 
--- вариант с JOIN
+-- РІР°СЂРёР°РЅС‚ СЃ JOIN
 SELECT
 	users.id,
 	users.name
@@ -12,14 +12,14 @@ FROM orders
 JOIN users 
 ON (users.id=orders.user_id);
 
-/* 2. Выведите список товаров products и разделов catalogs, который соответствует товару. */
+/* 2. Р’С‹РІРµРґРёС‚Рµ СЃРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ products Рё СЂР°Р·РґРµР»РѕРІ catalogs, РєРѕС‚РѕСЂС‹Р№ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С‚РѕРІР°СЂСѓ. */
 
 SELECT id, name, (
     SELECT name FROM catalogs WHERE id = catalog_id
 ) 
 FROM products;
 
--- вариант с JOIN
+-- РІР°СЂРёР°РЅС‚ СЃ JOIN
 SELECT 
 	products.id, 
 	products.name AS product,
@@ -29,10 +29,10 @@ LEFT JOIN catalogs
 ON catalogs.id = products.catalog_id;
 
 
-/* 3. (по желанию) Пусть имеется таблица рейсов flights (id, from, to) и таблица городов cities (label, name). 
-Поля from, to и label содержат английские названия городов, поле name — русское. Выведите список рейсов flights с русскими названиями городов. */
+/* 3. (РїРѕ Р¶РµР»Р°РЅРёСЋ) РџСѓСЃС‚СЊ РёРјРµРµС‚СЃСЏ С‚Р°Р±Р»РёС†Р° СЂРµР№СЃРѕРІ flights (id, from, to) Рё С‚Р°Р±Р»РёС†Р° РіРѕСЂРѕРґРѕРІ cities (label, name). 
+РџРѕР»СЏ from, to Рё label СЃРѕРґРµСЂР¶Р°С‚ Р°РЅРіР»РёР№СЃРєРёРµ РЅР°Р·РІР°РЅРёСЏ РіРѕСЂРѕРґРѕРІ, РїРѕР»Рµ name вЂ” СЂСѓСЃСЃРєРѕРµ. Р’С‹РІРµРґРёС‚Рµ СЃРїРёСЃРѕРє СЂРµР№СЃРѕРІ flights СЃ СЂСѓСЃСЃРєРёРјРё РЅР°Р·РІР°РЅРёСЏРјРё РіРѕСЂРѕРґРѕРІ. */
 
--- Создадим таблицы flights и flights
+-- РЎРѕР·РґР°РґРёРј С‚Р°Р±Р»РёС†С‹ flights Рё flights
 DROP TABLE IF EXISTS flights;
 CREATE TABLE flights (
     id SERIAL,
@@ -46,7 +46,7 @@ CREATE TABLE cities (
     `name` VARCHAR(50)
 );
 
--- Заполняем таблицы
+-- Р—Р°РїРѕР»РЅСЏРµРј С‚Р°Р±Р»РёС†С‹
 INSERT INTO flights
 VALUES (DEFAULT, 'Moscow', 'Irkutsk'),
        (DEFAULT, 'SPeterburg', 'Omsk'),
@@ -55,22 +55,22 @@ VALUES (DEFAULT, 'Moscow', 'Irkutsk'),
        (DEFAULT, 'Moscow', 'Kazan');
 
 INSERT INTO cities
-VALUES ('Moscow', 'Москва'),
-       ('Irkutsk', 'Иркутск'),
-       ('SPeterburg', 'С-Петербург'),
-       ('Kazan', 'Казань'),
-       ('Omsk', 'Омск');
+VALUES ('Moscow', 'РњРѕСЃРєРІР°'),
+       ('Irkutsk', 'РСЂРєСѓС‚СЃРє'),
+       ('SPeterburg', 'РЎ-РџРµС‚РµСЂР±СѓСЂРі'),
+       ('Kazan', 'РљР°Р·Р°РЅСЊ'),
+       ('Omsk', 'РћРјСЃРє');
 
--- Решение задачи
+-- Р РµС€РµРЅРёРµ Р·Р°РґР°С‡Рё
 SELECT id,
-	(SELECT name FROM cities WHERE label = `from`) AS `Откуда`,
-	(SELECT name FROM cities WHERE label = `to`) AS `Куда`
+	(SELECT name FROM cities WHERE label = `from`) AS `РћС‚РєСѓРґР°`,
+	(SELECT name FROM cities WHERE label = `to`) AS `РљСѓРґР°`
 FROM flights;
 
--- вариант с JOIN
+-- РІР°СЂРёР°РЅС‚ СЃ JOIN
 SELECT id,
-    from_label.name AS 'Откуда',
-    to_label.name   AS 'Куда'
+    from_label.name AS 'РћС‚РєСѓРґР°',
+    to_label.name   AS 'РљСѓРґР°'
 FROM flights
     JOIN cities from_label ON flights.`from` = from_label.label
     JOIN cities to_label ON flights.`to` = to_label.label
