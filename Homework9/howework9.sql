@@ -1,7 +1,5 @@
 -- Практическое задание по теме “Транзакции, переменные, представления”
 -- 1. В базе данных shop и sample присутствуют одни и те же таблицы, учебной базы данных. Переместите запись id = 1 из таблицы shop.users в таблицу sample.users. Используйте транзакции.
-USE sample;
-
 START TRANSACTION;
 INSERT INTO sample.users SELECT id, name FROM shop.users WHERE id = 1;
 COMMIT;
@@ -11,7 +9,7 @@ COMMIT;
 CREATE OR REPLACE view c_prod(prod_name, cat_name) AS
 SELECT p.name, c.name
 FROM products p
-JOIN catalogs c on p.catalog_id = c.id;
+JOIN catalogs c ON p.catalog_id = c.id;
 
 SELECT * FROM c_prod;
 
