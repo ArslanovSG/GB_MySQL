@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(50),
-	lastname VARCHAR(50) comment 'Фамилия',
+	lastname VARCHAR(50) comment 'Р¤Р°РјРёР»РёСЏ',
 	email VARCHAR(120) UNIQUE,
 	password_hash VARCHAR(100),
 	phone BIGINT UNSIGNED UNIQUE,
@@ -55,7 +55,7 @@ CREATE TABLE friend_requests(
 	FOREIGN KEY(target_user_id) REFERENCES users(id)
 );
 
--- проверка на дружбу самому себе
+-- РїСЂРѕРІРµСЂРєР° РЅР° РґСЂСѓР¶Р±Сѓ СЃР°РјРѕРјСѓ СЃРµР±Рµ
 ALTER TABLE friend_requests
 ADD CHECK (initiator_user_id <> target_user_id);
 
@@ -136,10 +136,10 @@ CREATE TABLE photos(
 
 
 
--- Домашнее задание. Создать 3 новые таблицы с перечнем полей, указанием индексов и внешних ключей
+-- Р”РѕРјР°С€РЅРµРµ Р·Р°РґР°РЅРёРµ. РЎРѕР·РґР°С‚СЊ 3 РЅРѕРІС‹Рµ С‚Р°Р±Р»РёС†С‹ СЃ РїРµСЂРµС‡РЅРµРј РїРѕР»РµР№, СѓРєР°Р·Р°РЅРёРµРј РёРЅРґРµРєСЃРѕРІ Рё РІРЅРµС€РЅРёС… РєР»СЋС‡РµР№
 
 
--- добавляем таблицу города
+-- РґРѕР±Р°РІР»СЏРµРј С‚Р°Р±Р»РёС†Сѓ РіРѕСЂРѕРґР°
 DROP TABLE IF EXISTS hometowns;
 CREATE TABLE hometowns(
 	id SERIAL,
@@ -149,14 +149,14 @@ CREATE TABLE hometowns(
 	FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
--- Обновляем таблицу profiles. Добавляем ссылки на таблицы media и hometowns
+-- РћР±РЅРѕРІР»СЏРµРј С‚Р°Р±Р»РёС†Сѓ profiles. Р”РѕР±Р°РІР»СЏРµРј СЃСЃС‹Р»РєРё РЅР° С‚Р°Р±Р»РёС†С‹ media Рё hometowns
 ALTER TABLE profiles
 ADD CONSTRAINT fk_photo_id FOREIGN KEY(photo_id) REFERENCES media(id),
 ADD CONSTRAINT fk_hometown_id FOREIGN KEY(hometown_id) REFERENCES hometowns(id)
 ON UPDATE CASCADE
 ON DELETE restrict; 
 
--- добавляем таблицу посты пользователей
+-- РґРѕР±Р°РІР»СЏРµРј С‚Р°Р±Р»РёС†Сѓ РїРѕСЃС‚С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
 DROP TABLE IF EXISTS posts;
 CREATE TABLE posts(
 	id SERIAL,
@@ -168,7 +168,7 @@ CREATE TABLE posts(
 	FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
--- добавляем таблицу лайки постов
+-- РґРѕР±Р°РІР»СЏРµРј С‚Р°Р±Р»РёС†Сѓ Р»Р°Р№РєРё РїРѕСЃС‚РѕРІ
 DROP TABLE IF EXISTS like_posts;
 CREATE TABLE like_posts(
 	id SERIAL,
@@ -180,7 +180,3 @@ CREATE TABLE like_posts(
 	FOREIGN KEY(user_id) REFERENCES users(id),
 	FOREIGN KEY(posts_id) REFERENCES posts(id)
 );
-
-
-
-
