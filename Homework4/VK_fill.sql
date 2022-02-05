@@ -1,5 +1,5 @@
--- i. Заполнить все таблицы БД vk данными
--- таблица users
+-- i. Р—Р°РїРѕР»РЅРёС‚СЊ РІСЃРµ С‚Р°Р±Р»РёС†С‹ Р‘Р” vk РґР°РЅРЅС‹РјРё
+-- С‚Р°Р±Р»РёС†Р° users
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password_hash`, `phone`) VALUES ('301', 'Ciara', 'Kling', 'emertz@example.com', '7c17a6c7c224bba7f4ce667f5af6296cee03c6ff', '865936');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password_hash`, `phone`) VALUES ('302', 'Carli', 'Lesch', 'ewisozk@example.com', '9c7ddf7889b53cb975faf48a188997bb90257620', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password_hash`, `phone`) VALUES ('303', 'Korbin', 'Heidenreich', 'leonie85@example.org', 'dd978db83c1e33431378aedaf594894a83c08ca1', '770');
@@ -181,7 +181,7 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password_hash`, `p
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password_hash`, `phone`) VALUES ('600', 'Arvilla', 'Bode', 'floy.kertzmann@example.net', '3a4f726f873654d575b22e8f4c7480a3a8941690', '676');
 
 
--- таблица friend_requests
+-- С‚Р°Р±Р»РёС†Р° friend_requests
 INSERT INTO `friend_requests` (`initiator_user_id`, `target_user_id`, `status`, `request_at`, `updated_at`) VALUES ('301', '302', 'declined', '2000-07-30 14:56:34', '2006-10-11 02:21:05');
 INSERT INTO `friend_requests` (`initiator_user_id`, `target_user_id`, `status`, `request_at`, `updated_at`) VALUES ('302', '303', 'declined', '2018-11-23 23:27:59', '1989-04-23 17:14:05');
 INSERT INTO `friend_requests` (`initiator_user_id`, `target_user_id`, `status`, `request_at`, `updated_at`) VALUES ('303', '305', 'approved', '2008-05-14 03:05:44', '1984-12-31 20:42:18');
@@ -283,7 +283,7 @@ INSERT INTO `friend_requests` (`initiator_user_id`, `target_user_id`, `status`, 
 INSERT INTO `friend_requests` (`initiator_user_id`, `target_user_id`, `status`, `request_at`, `updated_at`) VALUES ('460', '461', 'approved', '1988-08-11 10:24:46', '1978-04-01 05:25:53');
 INSERT INTO `friend_requests` (`initiator_user_id`, `target_user_id`, `status`, `request_at`, `updated_at`) VALUES ('461', '462', 'unfriended', '2003-07-22 02:08:40', '1994-04-08 14:54:02');
 
--- таблица photo_albums
+-- С‚Р°Р±Р»РёС†Р° photo_albums
 INSERT INTO `photo_albums` (`id`, `user_id`, `name`) VALUES ('1', '301', 'ea');
 INSERT INTO `photo_albums` (`id`, `user_id`, `name`) VALUES ('2', '302', 'odit');
 INSERT INTO `photo_albums` (`id`, `user_id`, `name`) VALUES ('3', '303', 'id');
@@ -385,13 +385,13 @@ INSERT INTO `photo_albums` (`id`, `user_id`, `name`) VALUES ('98', '459', 'qui')
 INSERT INTO `photo_albums` (`id`, `user_id`, `name`) VALUES ('99', '460', 'voluptas');
 INSERT INTO `photo_albums` (`id`, `user_id`, `name`) VALUES ('100', '461', 'voluptatibus');
 
--- таблица media_types
+-- С‚Р°Р±Р»РёС†Р° media_types
 INSERT INTO `media_types` (`id`, `name`, `created_at`, `updated_at`) VALUES ('1', 'unde', '2021-08-03 07:19:12', '1973-05-30 01:28:43');
 INSERT INTO `media_types` (`id`, `name`, `created_at`, `updated_at`) VALUES ('2', 'iste', '1973-02-26 21:35:53', '2003-12-16 22:06:24');
 INSERT INTO `media_types` (`id`, `name`, `created_at`, `updated_at`) VALUES ('3', 'eos', '1980-07-26 18:35:51', '2018-07-23 03:48:23');
 INSERT INTO `media_types` (`id`, `name`, `created_at`, `updated_at`) VALUES ('4', 'rerum', '1998-01-04 00:08:52', '2014-02-20 10:37:05');
 
--- таблица media
+-- С‚Р°Р±Р»РёС†Р° media
 INSERT INTO `media` (`id`, `media_type_id`, `user_id`, `body`, `filename`, `size`, `METADATA`, `created_at`, `updated_at`) VALUES ('1', '1', '301', 'Repellendus ipsum fuga molestiae ad veritatis dolor. Consequuntur unde quas aliquid ut suscipit. Nisi natus eveniet nobis libero similique quas aliquam.', 'officia', 15, NULL, '1986-08-18 18:53:25', '1976-11-08 08:18:02');
 INSERT INTO `media` (`id`, `media_type_id`, `user_id`, `body`, `filename`, `size`, `METADATA`, `created_at`, `updated_at`) VALUES ('2', '2', '302', 'Asperiores quae facilis rerum vel necessitatibus. Qui omnis ullam ut quo tempore blanditiis necessitatibus veritatis. Ab iste vel et qui ut ad porro. Non est eveniet dolores omnis ea.', 'nam', 131, NULL, '2002-07-17 00:28:14', '1981-02-22 02:13:26');
 INSERT INTO `media` (`id`, `media_type_id`, `user_id`, `body`, `filename`, `size`, `METADATA`, `created_at`, `updated_at`) VALUES ('3', '3', '303', 'Aut aut aliquid commodi. Amet aut quis tempore dolorem quia. Quam optio est neque vero consequatur explicabo.', 'molestias', 0, NULL, '1997-07-03 18:55:17', '1976-08-06 21:27:42');
@@ -1393,7 +1393,7 @@ INSERT INTO `media` (`id`, `media_type_id`, `user_id`, `body`, `filename`, `size
 INSERT INTO `media` (`id`, `media_type_id`, `user_id`, `body`, `filename`, `size`, `METADATA`, `created_at`, `updated_at`) VALUES ('999', '3', '465', 'Laboriosam voluptas doloribus qui quas. Voluptatem aperiam fuga molestias at voluptas dignissimos porro. Ab praesentium non necessitatibus temporibus delectus. Dignissimos maiores ratione quisquam pariatur fugiat corrupti iure nihil.', 'eveniet', 0, NULL, '1999-09-24 06:12:22', '1997-01-27 05:05:53');
 INSERT INTO `media` (`id`, `media_type_id`, `user_id`, `body`, `filename`, `size`, `METADATA`, `created_at`, `updated_at`) VALUES ('1000', '4', '467', 'In facere qui expedita dolore sunt tenetur sed. Tenetur minus velit natus cupiditate necessitatibus sit. Eligendi et iste velit ea rerum.', 'recusandae', 836066, NULL, '2003-07-30 04:14:38', '1973-12-23 21:33:36');
 
--- таблица messages
+-- С‚Р°Р±Р»РёС†Р° messages
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`) VALUES ('1', '301', '301', 'Necessitatibus perspiciatis labore quam ut qui exercitationem alias. Sapiente quis at consequatur. Quod illum pariatur est nam. Possimus fuga odit libero et.', '2001-08-24 00:43:10');
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`) VALUES ('2', '302', '302', 'Et eligendi inventore quisquam ut suscipit iure velit. In quasi et blanditiis quia et ducimus optio minima. Velit voluptatem possimus est amet enim tenetur. Doloribus amet quidem itaque ipsum deserunt.', '2002-08-16 23:43:22');
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`) VALUES ('3', '303', '303', 'Numquam enim voluptatem recusandae inventore repellendus. Aliquam est expedita ratione dignissimos doloremque saepe maiores. Dolor voluptatem sint dignissimos consectetur eos molestiae.', '2015-05-27 22:12:40');
@@ -1895,7 +1895,7 @@ INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`) VALUES ('499', '528', '528', 'Fugiat consequuntur facere dolor omnis voluptatem quod occaecati. Sunt eveniet iusto ducimus aut minima. Consequatur doloribus corrupti eaque eveniet illo eum aspernatur.', '2016-04-23 11:53:49');
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`) VALUES ('500', '529', '529', 'Temporibus tempore sunt atque illum mollitia. Praesentium et ducimus id voluptatum doloribus et qui quidem. Placeat ea molestiae ea assumenda sit et qui. Ut nemo eum rerum illum ipsa quam dignissimos.', '1991-10-10 20:17:13');
 
--- таблица communities
+-- С‚Р°Р±Р»РёС†Р° communities
 INSERT INTO `communities` (`id`, `name`, `admin_user_id`) VALUES ('1', 'itaque', '301');
 INSERT INTO `communities` (`id`, `name`, `admin_user_id`) VALUES ('2', 'voluptates', '302');
 INSERT INTO `communities` (`id`, `name`, `admin_user_id`) VALUES ('3', 'quidem', '303');
@@ -1997,7 +1997,7 @@ INSERT INTO `communities` (`id`, `name`, `admin_user_id`) VALUES ('98', 'alias',
 INSERT INTO `communities` (`id`, `name`, `admin_user_id`) VALUES ('99', 'necessitatibus', '460');
 INSERT INTO `communities` (`id`, `name`, `admin_user_id`) VALUES ('100', 'rem', '461');
 
--- таблица user_communities
+-- С‚Р°Р±Р»РёС†Р° user_communities
 INSERT INTO `user_communities` (`user_id`, `communities_id`) VALUES ('301', '1');
 INSERT INTO `user_communities` (`user_id`, `communities_id`) VALUES ('302', '2');
 INSERT INTO `user_communities` (`user_id`, `communities_id`) VALUES ('303', '3');
@@ -2099,7 +2099,7 @@ INSERT INTO `user_communities` (`user_id`, `communities_id`) VALUES ('459', '98'
 INSERT INTO `user_communities` (`user_id`, `communities_id`) VALUES ('460', '99');
 INSERT INTO `user_communities` (`user_id`, `communities_id`) VALUES ('461', '100');
 
--- таблица photos
+-- С‚Р°Р±Р»РёС†Р° photos
 INSERT INTO `photos` (`id`, `album_id`, `media_id`) VALUES ('1', '1', '1');
 INSERT INTO `photos` (`id`, `album_id`, `media_id`) VALUES ('2', '2', '2');
 INSERT INTO `photos` (`id`, `album_id`, `media_id`) VALUES ('3', '3', '3');
@@ -3101,7 +3101,7 @@ INSERT INTO `photos` (`id`, `album_id`, `media_id`) VALUES ('998', '98', '998');
 INSERT INTO `photos` (`id`, `album_id`, `media_id`) VALUES ('999', '99', '999');
 INSERT INTO `photos` (`id`, `album_id`, `media_id`) VALUES ('1000', '100', '1000');
 
--- таблица hometowns
+-- С‚Р°Р±Р»РёС†Р° hometowns
 INSERT INTO `hometowns` (`id`, `user_id`, `name`) VALUES ('1', '301', 'ad');
 INSERT INTO `hometowns` (`id`, `user_id`, `name`) VALUES ('2', '302', 'beatae');
 INSERT INTO `hometowns` (`id`, `user_id`, `name`) VALUES ('3', '303', 'autem');
@@ -3203,7 +3203,7 @@ INSERT INTO `hometowns` (`id`, `user_id`, `name`) VALUES ('98', '459', 'minus');
 INSERT INTO `hometowns` (`id`, `user_id`, `name`) VALUES ('99', '460', 'autem');
 INSERT INTO `hometowns` (`id`, `user_id`, `name`) VALUES ('100', '461', 'voluptate');
 
--- таблица profiles
+-- С‚Р°Р±Р»РёС†Р° profiles
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `photo_id`, `created_at`, `hometown_id`) VALUES ('301', 'f', '2018-12-08', '1', '1975-11-08 16:01:51', '1');
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `photo_id`, `created_at`, `hometown_id`) VALUES ('302', 'm', '2008-11-25', '2', '2017-12-18 16:53:02', '2');
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `photo_id`, `created_at`, `hometown_id`) VALUES ('303', 'f', '2009-04-30', '3', '1975-02-13 16:57:08', '3');
@@ -3305,7 +3305,7 @@ INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `photo_id`, `created_at
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `photo_id`, `created_at`, `hometown_id`) VALUES ('460', 'f', '2012-02-06', '99', '1982-05-25 16:58:47', '99');
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `photo_id`, `created_at`, `hometown_id`) VALUES ('461', 'm', '1971-07-11', '100', '1978-03-19 11:19:14', '100');
 
--- таблица likes
+-- С‚Р°Р±Р»РёС†Р° likes
 INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`) VALUES ('1', '301', '1', '1972-10-07 23:49:26');
 INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`) VALUES ('2', '302', '2', '2021-04-27 15:59:18');
 INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`) VALUES ('3', '303', '3', '1992-02-26 09:58:00');
@@ -4307,7 +4307,7 @@ INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`) VALUES ('998', '
 INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`) VALUES ('999', '465', '999', '2004-04-16 16:55:28');
 INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`) VALUES ('1000', '467', '1000', '1989-04-28 05:30:55');
 
--- таблица posts
+-- С‚Р°Р±Р»РёС†Р° posts
 INSERT INTO `posts` (`id`, `user_id`, `body`, `created_at`, `updated_at`) VALUES ('1', '301', 'Dolorum nesciunt non harum et aut voluptatem. Neque pariatur et saepe aliquam sit nesciunt at. Asperiores quidem veniam praesentium qui.', '1981-05-04 15:55:00', '1987-09-17 04:25:03');
 INSERT INTO `posts` (`id`, `user_id`, `body`, `created_at`, `updated_at`) VALUES ('2', '302', 'Possimus nostrum culpa cupiditate sed necessitatibus molestias et. Qui voluptatem blanditiis in. Officiis consequatur placeat id esse et fugiat. Error similique maxime est consectetur ab voluptatibus dolorem.', '1984-09-20 23:13:31', '1970-04-12 20:29:57');
 INSERT INTO `posts` (`id`, `user_id`, `body`, `created_at`, `updated_at`) VALUES ('3', '303', 'Molestias placeat recusandae rerum enim dolores. Id est voluptas alias voluptates non magnam est.', '2012-12-11 03:29:43', '1979-03-19 21:10:26');
@@ -5309,7 +5309,7 @@ INSERT INTO `posts` (`id`, `user_id`, `body`, `created_at`, `updated_at`) VALUES
 INSERT INTO `posts` (`id`, `user_id`, `body`, `created_at`, `updated_at`) VALUES ('999', '465', 'Deserunt praesentium et molestiae possimus ut. Aut accusantium rerum magnam aut deleniti rem a. Rerum debitis debitis et doloremque et.', '1983-11-22 16:54:27', '1983-12-10 08:55:15');
 INSERT INTO `posts` (`id`, `user_id`, `body`, `created_at`, `updated_at`) VALUES ('1000', '467', 'Porro voluptas repellendus aperiam impedit odit quis ut. Magni aperiam aliquid excepturi dolorem in expedita aut. Iure ut ad esse nihil.', '1983-03-24 07:08:41', '2007-01-24 00:07:30');
 
--- таблица like_posts
+-- С‚Р°Р±Р»РёС†Р° like_posts
 INSERT INTO `like_posts` (`id`, `user_id`, `posts_id`, `created_at`) VALUES ('1', '301', '1', '1998-07-02 09:37:26');
 INSERT INTO `like_posts` (`id`, `user_id`, `posts_id`, `created_at`) VALUES ('2', '302', '2', '2008-07-27 01:22:27');
 INSERT INTO `like_posts` (`id`, `user_id`, `posts_id`, `created_at`) VALUES ('3', '303', '3', '2015-05-23 13:57:44');
