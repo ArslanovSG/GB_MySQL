@@ -1,0 +1,147 @@
+
+C:\Program Files\MySQL\MySQL Server 8.0>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> \q
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0>mysqldump -u root -p  example > example.sql
+Отказано в доступе.
+
+C:\Program Files\MySQL\MySQL Server 8.0>cd C:\mysql
+
+C:\mysql>mysqldump -u root -p  example > example.sql
+Enter password: *********
+
+C:\mysql>dir
+ Том в устройстве C имеет метку Windows
+ Серийный номер тома: 8C0C-E5FE
+
+ Содержимое папки C:\mysql
+
+06.01.2022  15:50    <DIR>          .
+06.01.2022  15:50             1 942 example.sql
+05.01.2022  22:07                39 my.cnf
+               2 файлов          1 981 байт
+               1 папок  69 633 331 200 байт свободно
+
+C:\mysql>cd C:\Program Files\MySQL\MySQL Server 8.0>
+Ошибка в синтаксисе команды.
+
+C:\mysql>cd C:\Program Files\MySQL\MySQL Server 8.0
+
+C:\Program Files\MySQL\MySQL Server 8.0>dir
+ Том в устройстве C имеет метку Windows
+ Серийный номер тома: 8C0C-E5FE
+
+ Содержимое папки C:\Program Files\MySQL\MySQL Server 8.0
+
+06.01.2022  15:51    <DIR>          .
+06.01.2022  15:16    <DIR>          ..
+06.01.2022  14:52    <DIR>          bin
+06.01.2022  14:52    <DIR>          docs
+06.01.2022  14:52    <DIR>          etc
+06.01.2022  15:50             1 942 example.sql
+06.01.2022  14:52    <DIR>          include
+06.01.2022  14:52    <DIR>          lib
+28.09.2021  11:46           276 550 LICENSE
+28.09.2021  11:46            47 657 LICENSE.router
+05.01.2022  22:07                39 my.cnf
+28.09.2021  11:46               666 README
+28.09.2021  11:46               679 README.router
+06.01.2022  14:52    <DIR>          share
+               6 файлов        327 533 байт
+               8 папок  69 632 602 112 байт свободно
+
+C:\Program Files\MySQL\MySQL Server 8.0>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 31
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> \q
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0>mysql sample < example.sql
+
+C:\Program Files\MySQL\MySQL Server 8.0>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 33
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE sample;
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> \q
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0>cd C:\mysql
+
+C:\mysql>mysqldump -u root -p --where="true limit 100" mysql help_keyword > mysql.sql
+Enter password: *********
+
+C:\mysql>dir
+ Том в устройстве C имеет метку Windows
+ Серийный номер тома: 8C0C-E5FE
+
+ Содержимое папки C:\mysql
+
+06.01.2022  16:27    <DIR>          .
+06.01.2022  15:50             1 942 example.sql
+05.01.2022  22:07                39 my.cnf
+06.01.2022  16:27             3 682 mysql.sql
+               3 файлов          5 663 байт
+               1 папок  69 640 495 104 байт свободно
+
+C:\mysql>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 36
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> \q
+Bye
+
+C:\mysql>
